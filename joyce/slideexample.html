@@ -1,0 +1,57 @@
+<html>
+  <div id="slidebar" style= "position: absolute; top:0; left: 0; width: 400px; height: 100%; background-color: red">
+    <h1 id="title">Title</h1>
+    <p id="description">Description</p>
+    <button id="nextBotton">Next</button>
+  </div>
+  <div id="map" style="position: absolute; top:0; height: 100%; right: 0; left: 400">
+    <h1>I am a Map</h1>
+  </div>
+  <script
+    src= ""
+    integrity=
+    crossorigin = "annoymous"></script>
+
+  <script>
+    // slide model
+    // a title
+    // a description
+    // background color
+  var slides = [
+    {title: "title1", description: "the firts description", color: "#FFFF00"},
+    {title: "title2", description: "the firts description", color: "#FF00FF"},
+    {title: "title3", description: "the firts description", color: "#FFFF00"}
+    ]
+  var currentSlide = 0
+
+  var loadSlide= function(slide) {
+      $('#title').text(slide.title),
+      $('#description').text(slide.description),
+      $('#slidebar').css("background-color", slide.color)
+    }
+
+  var next = function(){
+    if (currentSlide == slidess.length -1){
+      $('#nextButton').hide()
+    } else {
+      $('#nextButton').show()
+      currentsSlide = currentSlide +1
+      loadSlide(slides[currentSlide])
+    }
+    if (currentSlide == slides.length - 1){
+      $('#nextButton').hide()
+    }
+    }
+
+  $('#nextBotton').click(fucntion(e){
+    next()
+    })
+  var midtermSlide1 = {
+      filter: function(feat) {// return true or fale for this feat},
+      title: "title!",
+      description:""
+    }
+
+  </script>
+
+</html>
