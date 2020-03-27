@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>StoryMapTitle</title>
+    <!--CSS Imports-->
+    <link rel="stylesheet" href="mdstyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+    <h1>Global Plastic Waste Trade</h1>
+  </head>
+  <body>
+    <div id= "sidebar">
+      <label>Export Country  </label><input type="text" id="country">
+      <br>
+      <label>Year  </label><input type="number" id="year">
+      <br>
+      <button id="fire"> See Waste Transaction </button>
+    </div>
+    <div id="map"></div>
+    <!-- Javasc Imports-->
+    <script src="js/leaflet.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/jquery-2.2.0.js"></script>
+    <!-- Other kinds of imports
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery-3.4.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" integrity="sha256-G7A4JrJjJlFqP0yamznwPjAApIKPkadeHfyIwiaa9e0=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+-->
+    <script src="mtmain.js"></script>
+  </body>
+</html>
