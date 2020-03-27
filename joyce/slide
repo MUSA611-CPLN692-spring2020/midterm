@@ -1,0 +1,78 @@
+var slideModel = {
+breed:"the dog's breed",
+description: "some long description of dog",
+origin: [Lat, Lng]
+}
+
+var slide1 = {
+breed: "A",
+description: "good",
+origin: [70,70]
+}
+
+var slide2 = {
+breed: "B",
+description: "quite good",
+origin: [60,60]
+}
+
+"```javascript"
+"```"
+
+hide and show features with jquery
+change text,
+get data, load in, first slide, load it up with markers,
+some text associated with that
+selectors:
+$('section.eight p')
+$('section.eight p').text("A")
+$('section.eight p').click(function(e) {alert("clicked on A")})
+$('section.eight p').click(function(e) {$('section.eight p').text("not A")})
+var letters = ['a', 'b', 'c', 'd']
+var currentLetter = 0
+letters[currentLetter]
+> "a"
+The NEXT bottom:
+var next = function() {
+if (currentLetter == letters.length - 1) {
+console.log("there is no next")
+}
+else{
+currentLetter = currentLetter + 1
+}
+return letters[currentLetter]
+}
+currentLetter = 0
+>
+next()
+>"a"
+next()
+>"b"
+
+what if we want to display the slides in loop
+var next = function(){
+if (currentLetter == letters.length - 1){
+currentLetter = 0}
+else{
+currentLetter = currentLetter + 1}
+return letters[currentLetter]
+}
+
+}
+
+reset zoom level (attach to slide model)
+map.setZoom (0)
+(like an index: 0-20)
+map.flyTo([0,0], 14)   (geometry, index)
+
+hide the next bottom
+$('h2.logo').hide()
+$('h2.logo').show()
+
+
+
+is there any organizational feature to take the slides into sequence?
+Or it's gonna be more like a button feature for each slide?
+
+I intend to work with a file ~41MB (110 rows, ~10 variables)
+from my own research and want to demonstrate selected data in each slide.
