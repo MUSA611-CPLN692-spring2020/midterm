@@ -20,8 +20,6 @@
   <body>
     <div class = "sidebar">
       <div class = "slides">
-        <div id="image">Insert image here
-        </div>
         <div id="description">this is the description
           <!--<div class = "scrollbar" id = "scroll"></div>-->
         </div>
@@ -42,10 +40,16 @@
       </div>
     <div id="worldmap">Insert Map Here
     </div>
-
+    <div class="image">
+      <img id="image1" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide1.png"
+      alt = "top 20 countries in municipal waste generation"> </img>
+      <img id="image2" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide1.png"
+      alt = "top 20 countries in municipal waste generation"> </img>
+    </div>
     <div class = "deck">
         <div id="slide1" class= "button slide">
           <div class="slide-text">1<br>We Generate A Lot of Waste</div>
+          <img id="image" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide1.png"></img>
         </div>
         <div id="slide2" class= "button slide"> <a href="#slide2"></a>
           <div class="slide-text">2<br>Destinations of Plastic Waste</div>
@@ -72,21 +76,16 @@
 
     <script>
       var slides = [
-      { image: "pic1",
-        description: "the first description"},
-      { image: "pic2",
-        description: "the second description"},
-      { image: "pic3",
-        description: "the first description"},
-      { image: "pic4",
-        description: "made up description"},
-      { image: "pic5",
-        description: "made up description"}
+      { description: "the first description"},
+      { description: "the second description"},
+      { description: "the first description"},
+      { description: "made up description"},
+      { description: "made up description"}
     ]
       var currentSlide = 0
 
+
       var loadSlide = function(slide) {
-      $('#image').text(slide.image)
       $('#description').text(slide.description)
     }
 
@@ -101,7 +100,8 @@ var slide1 = function(){
   if (currentSlide == slides.length ){
 }else{
     $('#slide1').show()
-    loadSlide(slides[0])
+    loadSlide(slides[0]);
+    $("#image1").show()
 }
 }
 $('#slide1').click(function(e){
