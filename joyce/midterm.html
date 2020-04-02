@@ -3,78 +3,166 @@
   <head>
     <meta charset="utf-8">
     <title>Plastic Waste Trade</title>
+    <!-- add topojson support for leaflet-->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+
     <!--CSS Imports-->
     <link rel="stylesheet" href="css/mdstyle.css" />
     <link rel="stylesheet" href="css/leaflet.css" />
-    <h1>Global Plastic Waste Trade</h1>
+
+    <div class = "head">
+      <h1>Global Plastic Waste Trade</h1>
+    </div>
   </head>
 
   <body>
-    <div id= "sidebar">
-      <div class="inputgroup">
-        <label for="sel">Continent </label>
-        <select id="sel" type="text">
-          <option value="All">All</option>
-          <option value="1">Africa</option>
-          <option value="2">Asia</option>
-          <option value="3">Americas</option>
-          <option value="4">Europe</option>
-          <option value="5">Oceania</option>
-        </select>
+    <div class = "sidebar">
+      <div class = "slides">
+        <div id="image">Insert image here
+        </div>
+        <div id="description">this is the description
+          <!--<div class = "scrollbar" id = "scroll"></div>-->
+        </div>
+        <div id="input" class="inputgroup">
+                <label for="sel">Continent </label>
+                  <select id="option" type="text">
+                  <option value="All">All</option>
+                  <option value="1">Africa</option>
+                  <option value="2">Asia</option>
+                  <option value="3">Americas</option>
+                  <option value="4">Europe</option>
+                  <option value="5">Oceania</option>
+                </select>
+              </div>
+              <button id="fire"> See Waste Export by Country </button>
+              </div>
+        </div>
       </div>
-      <br>
-      <div class="inputgroup">
-          <label for="sel">Development Status </label>
-          <select id="sel" type="text">
-            <option value="All">All</option>
-            <option value="1">Developed</option>
-            <option value="2">Developing</option>
-          </select>
-      </div>
-      <div class="inputgroup">
-          <label for="sel">Year </label>
-          <select id="sel" type="text">
-            <option value="All">All</option>
-            <option value="1996">1996</option>
-            <option value="1997">1997</option>
-            <option value="1998">1998</option>
-            <option value="1999">1999</option>
-            <option value="2000">2000</option>
-            <option value="2001">2001</option>
-            <option value="2002">2002</option>
-            <option value="2003">2003</option>
-            <option value="2004">2004</option>
-            <option value="2005">2005</option>
-            <option value="2006">2006</option>
-            <option value="2007">2007</option>
-            <option value="2008">2008</option>
-            <option value="2009">2009</option>
-            <option value="2010">2010</option>
-            <option value="2011">2011</option>
-            <option value="2012">2012</option>
-            <option value="2013">2013</option>
-            <option value="2014">2014</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-          </select>
-      </div>
-      <br>
-      <div class="inputgroup">
-        <label>GDP in billion  </label><input type="number" id="GDPb">
-      </div>
-      <div class="inputgroup">
-        <label>Population  </label><input type="number" id="Population">
-      </div>
-      <br>
-      <button id="fire"> See Waste Export by Country </button>
-
+    <div id="worldmap">Insert Map Here
     </div>
-    <div id="map"></div>
+
+    <div class = "deck">
+        <div id="slide1" class= "button slide">
+          <div class="slide-text">1<br>We Generate A Lot of Waste</div>
+        </div>
+        <div id="slide2" class= "button slide"> <a href="#slide2"></a>
+          <div class="slide-text">2<br>Destinations of Plastic Waste</div>
+        </div>
+        <div id="slide3" class= "button slide">
+          <div class="slide-text">3<br>Economic Value</div>
+        </div>
+        <div id="slide4" class= "button slide">
+          <div class="slide-text">4<br>Destinies of Plastic Waste</div>
+        </div>
+        <div id="slide5" class= "button slide">
+          <div class="slide-text">5<br>Please Explore</div>
+        </div>
+    </div>
+    <script
+      src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+      integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+      crossorigin="">
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+
+    <script>
+      var slides = [
+      { image: "pic1",
+        description: "the first description"},
+      { image: "pic2",
+        description: "the second description"},
+      { image: "pic3",
+        description: "the first description"},
+      { image: "pic4",
+        description: "made up description"},
+      { image: "pic5",
+        description: "made up description"}
+    ]
+      var currentSlide = 0
+
+      var loadSlide = function(slide) {
+      $('#image').text(slide.image)
+      $('#description').text(slide.description)
+    }
+
+
+var input = function(){
+  if (currentSlide = 4){
+    $('#input').show(slide.input)
+  }
+}
+
+var slide1 = function(){
+  if (currentSlide == slides.length ){
+}else{
+    $('#slide1').show()
+    loadSlide(slides[0])
+}
+}
+$('#slide1').click(function(e){
+  slide1()
+})
+
+var slide2 = function(){
+  if (currentSlide == slides.length ){
+}else{
+    $('#slide2').show()
+    loadSlide(slides[1])
+}
+}
+$('#slide2').click(function(e){
+  slide2()
+})
+
+var slide3 = function(){
+    if (currentSlide == slides.length ){
+  }else{
+      $('#slide3').show()
+      loadSlide(slides[2])
+  }
+  }
+  $('#slide3').click(function(e){
+    slide3()
+})
+var slide4 = function(){
+  if (currentSlide == slides.length ){
+}else{
+    $('#slide4').show()
+    loadSlide(slides[3])
+}
+}
+$('#slide4').click(function(e){
+  slide4()
+})
+var slide5 = function(){
+  if (currentSlide == slides.length ){
+}else{
+    $('#slide5').show()
+    loadSlide(slides[4])
+}
+}
+$('#slide5').click(function(e){
+  slide5();
+  input();
+})
+
+
+
+
+    </script>
+
+
     <!-- Javasc Imports-->
     <script src="js/leaflet.js"></script>
     <script src="js/underscore.js"></script>
     <script src="js/jquery-2.2.0.js"></script>
+    <script src="js/topojson.js"></script>
+    <script src="js/mtmain.js"></script>
     <!-- Other kinds of imports
     <script src="https://ajax.googleapis.com/ajax/libs/jquery-3.4.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" integrity="sha256-G7A4JrJjJlFqP0yamznwPjAApIKPkadeHfyIwiaa9e0=" crossorigin="anonymous"></script>
@@ -82,6 +170,5 @@
   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
   crossorigin="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 -->
-    <script src="js/mtmain.js"></script>
   </body>
 </html>
