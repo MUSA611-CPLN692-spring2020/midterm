@@ -24,7 +24,7 @@
         alt = "top 20 countries in municipal waste generation"> </img>
         <img id="image2" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide2.png"
         alt = "top 10 countries in plastic waste export and import"> </img>
-        <img id="image4" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide2.png"
+        <img id="image4" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide4.png"
         alt = "waste mismanagement"> </img>
         <p id="description">this is the description</p>
           <!--<div class = "scrollbar" id = "scroll"></div>-->
@@ -121,6 +121,7 @@
       document.getElementById("input").style.display="none";
       document.getElementById("image1").style.display="inherit";
       document.getElementById("image2").style.display="none";
+      document.getElementById("image4").style.display="none";
     });
 
       var slides = [
@@ -145,6 +146,7 @@ var slide1 = function(){
     document.getElementById("input").style.display="none";
     document.getElementById("image1").style.display="inherit";
     document.getElementById("image2").style.display="none";
+    document.getElementById("image4").style.display="none";
 }
 }
 $('#slide1').click(function(e){
@@ -160,6 +162,7 @@ var slide2 = function(){
     document.getElementById("input").style.display="none";
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="inherit";
+    document.getElementById("image4").style.display="none";
 }
 }
 $('#slide2').click(function(e){
@@ -174,8 +177,9 @@ var slide3 = function(){
       $('#slide3').show()
       loadSlide(slides[2])
       document.getElementById("input").style.display="none";
-      document.getElementById("image1").style.display="inherit";
+      document.getElementById("image1").style.display="none";
       document.getElementById("image2").style.display="none";
+      document.getElementById("image4").style.display="none";
   }
   }
   $('#slide3').click(function(e){
@@ -187,8 +191,9 @@ var slide4 = function(){
     $('#slide4').show()
     loadSlide(slides[3])
     document.getElementById("input").style.display="none";
-    document.getElementById("image1").style.display="inherit";
+    document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="none";
+    document.getElementById("image4").style.display="inherit";
 }
 }
 $('#slide4').click(function(e){
@@ -201,6 +206,7 @@ var slide5 = function(){
     loadSlide(slides[4])
     document.getElementById("input").style.display="inherit";
     document.getElementById("image1").style.display="none";
+    document.getElementById("image2").style.display="none";
     document.getElementById("image2").style.display="none";
 }
 }
