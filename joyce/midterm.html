@@ -3,14 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Plastic Waste Trade</title>
-    <!-- add topojson support for leaflet-->
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://d3js.org/topojson.v1.min.js"></script>
-    <script src="https://unpkg.com/topojson-client@3"></script>
 
     <!--CSS Imports-->
     <link rel="stylesheet" href="css/mdstyle.css" />
-    <link rel="stylesheet" href="css/leaflet.css" />
+    <!--add Leaflet CSS-->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+      integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+      crossorigin=""/>
+    <!--add Leaflet JS-->
+      <script
+        src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+        integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+        crossorigin="">
+      </script>
+      <!--add topojson & library-->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+
     <div class = "head">
       <h1>Global Plastic Waste Trade</h1>
     </div>
@@ -29,7 +38,7 @@
         <p id="description">this is the description</p>
           <!--<div class = "scrollbar" id = "scroll"></div>-->
         <div id="input" class="inputgroup">
-                <label for="sel">Continent </label>
+                <label id="sel">Continent </label>
                   <select id="option" type="text">
                   <option value="All">All</option>
                   <option value="1">Africa</option>
@@ -39,14 +48,14 @@
                   <option value="5">Oceania</option>
                 </select>
               <br><br>
-                  <label for="sel">Development Status </label>
+                  <label id="sel">Development Status </label>
                   <select id="option" type="text">
                     <option value="All">All</option>
                     <option value="1">Developed</option>
                     <option value="2">Developing</option>
                   </select>
                <br><br>
-                  <label for="sel">Year </label>
+                  <label id="sel">Year </label>
                   <select id="option" type="text">
                     <option value="All">All</option>
                     <option value="1996">1996</option>
@@ -105,11 +114,6 @@
         </div>
     </div>
     <script
-      src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-      integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-      crossorigin="">
-    </script>
-    <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
@@ -128,8 +132,8 @@
       { description: "The world population has been generating a lot of waste.. Annually, we produce 2.01 billion  metric tons of municipal solid waste (MSW) while 84.93 trillion USD  exchange between hands. Our economic prosperity may continue to grow, yet waste production shows no sign of stopping. We are likely going to produce 70%  more by 2050. U.S.A. and China, two of the fastest growing economy, are leading the race of waste generation. Although study showed that waste generate grows as income improved, the fact that the top10 list includes both developing and developed, low and high-income countries suggest the complexity behind this issue.  To disentangle the mystery, let’s first explore plastic waste and its economic implications. "},
       { description: "Globally, around 9.04 trillion  worth of plastic waste is being traded in the latest report year 2017. The exporters are disproportionally developed and/or higher income countries. Notably, U.S.A. is the single biggest exporter, while EU-28 the single biggest region group exporter. But which countries are holding onto the waste? China has been dealing with around half of the world’s unwanted plastics. Hong Kong remained second biggest importer for many years due to its role in reexporting for profit. Things have changed since the China import ban, the plastic-regulation-added Basel Convention, and more defense from poor, importer countries for their environmental degradation and unfair labor condition in waste industry. As a consequence, 111 billion tons of plastic waste could be displaced by 2030, study showed. Traditional importer countries like Malaysia, India, Philippine, has started to reject waste shipment from exporters. All countries need to be prepared for a new plastic waste future."},
       { description: "Plastic waste trade may sound untraditional, but believe it or not, it has economic values for both sides. Taking US as an example, it costs significantly cheaper to ship recyclables oversea than to treat it domestically, for the lack of domestic recycling power and just the huge convenience of auditing this method as part of the recycling achieved in waste management overall. As for importers like China, due to a long-existing supply chain position, China has been the biggest plastic product producers of the world as well. When the crude oil price remains competitive, recycling plastic becomes even more lucrative as plastic comes from crude oil originally. However, the business in recent years has caused some concern. While the crude oil price has dropped dramatically, and Chinese government has been reconsidering its role in global economy and aspiring to be a leader of sustainability. Plus, the quality and price of imported plastic waste have not been consistent, which has been lack of attention due to a weak link in politics and regulations. Then, how should China, and soon many other countries that rely on foreign lands to process their waste, rethink about such economic value and evaluate its impact at time-terms and scale?"},
-      { description: "made up description"},
-      { description: "Now it's your time to explore!"}
+      { description: "One way to evaluate is to reflect on a country’s own waste management performance. As always, this leads us to the final destinies of our plastic waste. A study on US’s 2018 plastic export behavior found out that partner countries could have been mismanaging their own municipal waste up to 78%. Such mismanagement could include landfilling, polluting the waterway, the ocean, and eventually ground water supply, as well as illegal trafficking at ports. It’s easy to celebrate for achievement, but it will take years, serious measures, and even lives to recover from a deficit due to mismanagement. But let’s not just leaving the conversation to those in the chambers or city halls to carry out. Everyone of us may have been contributing plastic waste everyday, passively or actively. So how you can be part of the conversation? Move on to the last section to explore the global context at your own leisure. "},
+      { description: "Now it's your time to explore! Don't forget to share with the others your observations~"}
     ]
       var currentSlide = 0
 
@@ -207,7 +211,7 @@ var slide5 = function(){
     document.getElementById("input").style.display="inherit";
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="none";
-    document.getElementById("image2").style.display="none";
+    document.getElementById("image4").style.display="none";
 }
 }
 $('#slide5').click(function(e){
@@ -222,10 +226,9 @@ $('#slide5').click(function(e){
 
 
     <!-- Javasc Imports-->
-    <script src="js/leaflet.js"></script>
     <script src="js/underscore.js"></script>
     <script src="js/jquery-2.2.0.js"></script>
-    <script src="js/topojson.js"></script>
+    <!--<script src="js/topojson.js"></script>-->
     <script src="js/mtmain.js"></script>
     <!-- Other kinds of imports
     <script src="https://ajax.googleapis.com/ajax/libs/jquery-3.4.1/jquery.min.js"></script>
