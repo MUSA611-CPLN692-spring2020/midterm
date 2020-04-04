@@ -82,7 +82,7 @@ let map = L.map('worldmap');
 
 
 //fetch the topojson and add it to geojson layer
-     getGeoData('https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/Waste_Mexport3.json')
+     getGeoData('https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/Waste_Mexport3topo.json')
      .then(parsedData=>geojson.addData(parsedData))
 //     done(function(data) {
 //       var parsedData = JSON.parse(data);
