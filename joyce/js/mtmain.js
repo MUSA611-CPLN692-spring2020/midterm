@@ -76,14 +76,14 @@ let map = L.map('worldmap');
      let response = await fetch(url);
      let data = await response.json();
        console.log(data);
-       return data;
-       var parsedData = JSON.parse(data);
-       return parsedData}
+       return data}
+//       var parsedData = JSON.parse(data);
+//       return parsedData}
 
 
 //fetch the topojson and add it to geojson layer
-     getGeoData('https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/Waste_Mexport3_s.json')
-     .then(parsedData=>geojson.addData(parsedData))
+     getGeoData('https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/Waste_Mexport3topo.json')
+     .then(data=>geojson.addData(data))
 //     done(function(data) {
 //       var parsedData = JSON.parse(data);
 //       featureGroup = L.geoJson(parsedData, {
