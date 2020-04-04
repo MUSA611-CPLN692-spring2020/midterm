@@ -33,7 +33,7 @@ let map = L.map('worldmap');
       var geojson = L.topoJson(null, {
         style: function(feature){
           return {
-            color: "#000",
+            color: "#000000",
             opacity: 1,
             weight: 1,
             fillColor: '#35495d',
@@ -82,7 +82,7 @@ let map = L.map('worldmap');
 
 
 //fetch the topojson and add it to geojson layer
-     getGeoData('https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/Waste_Mexport3topo.json')
+     getGeoData('https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/Waste_Mexport3topons.json')
      .then(data=>geojson.addData(data))
 //     done(function(data) {
 //       var parsedData = JSON.parse(data);
