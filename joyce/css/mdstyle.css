@@ -184,6 +184,22 @@ label {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#image3{
+  position: absolute;
+  height:40%;
+  left: 0;
+  top: 38%;
+  min-width: 230px;
+  max-width: 588px;
+  min-height: 300px;
+  max-height:200px;
+  width: auto;
+  height: auto;
+  min-width: 240px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #image4{
   position: absolute;
   height:40%;

@@ -33,6 +33,8 @@
         alt = "top 20 countries in municipal waste generation"> </img>
         <img id="image2" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide2.png"
         alt = "top 10 countries in plastic waste export and import"> </img>
+        <img id="image3" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide3.png"
+        alt = "top 25% heaviest import but cheap unit price"> </img>
         <img id="image4" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide4.png"
         alt = "waste mismanagement"> </img>
         <p id="description">this is the description</p>
@@ -74,6 +76,7 @@
       loadSlide(slides[0])
       document.getElementById("image1").style.display="inherit";
       document.getElementById("image2").style.display="none";
+      document.getElementById("image3").style.display="none";
       document.getElementById("image4").style.display="none";
     });
 
@@ -98,6 +101,7 @@ var slide1 = function(){
     loadSlide(slides[0])
     document.getElementById("image1").style.display="inherit";
     document.getElementById("image2").style.display="none";
+    document.getElementById("image3").style.display="none";
     document.getElementById("image4").style.display="none";
     document.getElementById("slide1").addEventListener("click", addlayer1);
     }
@@ -115,6 +119,7 @@ var slide2 = function(){
     loadSlide(slides[1])
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="inherit";
+    document.getElementById("image3").style.display="none";
     document.getElementById("image4").style.display="none";
     document.getElementById("slide2").addEventListener("click", addlayer2);
 }
@@ -132,6 +137,7 @@ var slide3 = function(){
       loadSlide(slides[2])
       document.getElementById("image1").style.display="none";
       document.getElementById("image2").style.display="none";
+      document.getElementById("image3").style.display="inherit";
       document.getElementById("image4").style.display="none";
       document.getElementById("slide2").addEventListener("click", addlayer3);
   }
@@ -146,6 +152,7 @@ var slide4 = function(){
     loadSlide(slides[3])
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="none";
+    document.getElementById("image3").style.display="none";
     document.getElementById("image4").style.display="inherit";
     document.getElementById("slide2").addEventListener("click", addlayer4);
 }
@@ -160,12 +167,12 @@ var slide5 = function(){
     loadSlide(slides[4])
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="none";
+    document.getElementById("image3").style.display="none";
     document.getElementById("image4").style.display="none";
 }
 }
 $('#slide5').click(function(e){
   slide5();
-  input();
 })
 
 
