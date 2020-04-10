@@ -249,3 +249,10 @@ label {
   min-width:500px;
   z-index:99;
 }
+
+.text-labels {
+           font-size: 2em;
+           font-weight: 700;
+           color: white;
+           /* Use color, background, set margins for offset, etc */
+       }
