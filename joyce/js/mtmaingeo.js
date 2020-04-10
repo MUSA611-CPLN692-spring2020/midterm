@@ -53,17 +53,6 @@ var myStyle = function(feature){
      fillColor:"rgb(128, 128, 128)"}}
   }
 
-  //add labels
-  var textLatLng = [33.42, 106.514];
-         var myTextLabel = L.marker(textLatLng, {
-             icon: L.divIcon({
-                 className: 'text-labels',   // Set class for CSS styling
-                 html: 'A Text Label'
-             }),
-             zIndexOffset: 1000     // Make appear above other map features
-         });
-
-
 //var myFilter = function(feature) {
 //    if (Math.random()>0.5 ) {
 //      return false
