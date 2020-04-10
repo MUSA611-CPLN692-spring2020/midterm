@@ -19,7 +19,7 @@ var positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/l
 positron.addTo(map);
 
 // Ajax to grab json
-var datalink = "https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/m2017.json"
+var datalink = "https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/midterm_dataset/m2016.json"
 
 
 var myStyle = function(feature){
