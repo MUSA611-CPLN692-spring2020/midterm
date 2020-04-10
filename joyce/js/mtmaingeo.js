@@ -2,8 +2,6 @@
   Global Variables
 ===================== */
 var data;  // for holding data
-var stringFilter = "";
-var selectValue = 'All';
 
 /* =====================
   Map Setup
@@ -85,17 +83,13 @@ var myStyle1 = function(feature){
      weight: 1}}
   };
 
-function addlayer1 (){
-  $(document).ready(function() {
+var layer1 = function() {
   $.ajax(datalink).done(function(data) {
    var parsedData = JSON.parse(data);
       featureGroup = L.geoJson(parsedData, {
         style: myStyle1
     }).addTo(map);
-  })
-});}
-
-
+  })};
 
 
 
@@ -137,65 +131,73 @@ var myStyle2 = function(feature){
         weight: 1}}
       };
 
-function addlayer2 (){
-  $(document).ready(function() {
-  $.ajax(datalink).done(function(data) {
-   var parsedData = JSON.parse(data);
-      featureGroup = L.geoJson(parsedData, {
-        style: myStyle2
-    }).addTo(map);
-  })
-});}
+      var layer2 = function() {
+        $.ajax(datalink).done(function(data) {
+         var parsedData = JSON.parse(data);
+            featureGroup = L.geoJson(parsedData, {
+              style: myStyle2
+          }).addTo(map);
+        })};
 
 
 
 var myStyle3 = function(feature){
  if(feature.properties.ISO3 == "CHN"|
-    feature.properties.ISO3 == "MYS"|
-    feature.properties.ISO3 == "ITA"|
-    feature.properties.ISO3 == "TUR"
+    feature.properties.ISO3 == "SVN"|
+    feature.properties.ISO3 == "MYS"
 ){
    return {
-     color:"rgb(69, 115, 161)",
-     fillColor:"rgb(69, 115, 161)",
+     color:"black",
+     fillColor:"black",
    weight: 1}}
    else if(
-     feature.properties.ISO3 == "JPN"|
+     feature.properties.ISO3 == "NLD"|
+     feature.properties.ISO3 == "DEU"|
+     feature.properties.ISO3 == "USA"|
+     feature.properties.ISO3 == "TUR"|
+     feature.properties.ISO3 == "BEL"|
+     feature.properties.ISO3 == "AUS"|
+     feature.properties.ISO3 == "THA"|
+     feature.properties.ISO3 == "IDN"|
+     feature.properties.ISO3 == "POL"|
      feature.properties.ISO3 == "GBR"|
-     feature.properties.ISO3 == "FRA"|
+     feature.properties.ISO3 == "PRT"|
+     feature.properties.ISO3 == "ESP"|
      feature.properties.ISO3 == "MEX"|
-     feature.properties.ISO3 == "THA"
+     feature.properties.ISO3 == "ROU"|
+     feature.properties.ISO3 == "LTU"
    ) {
      return{
      color: "rgb(204, 51, 0)",
      fillColor:"rgb(204, 51, 0)",
    weight: 1}}
-     else if(
-           feature.properties.ISO3 == "USA"|
-           feature.properties.ISO3 == "HKG"|
-           feature.properties.ISO3 == "DEU"|
-           feature.properties.ISO3 == "BEL"|
-           feature.properties.ISO3 == "NLD"
-     ){
-        return {
-        color:"rgb(0, 0, 51)",
-        fillColor:"rgb(0, 0, 51)",
-      weight: 1}}
         else{return{
           color: null,
           fillColor:"rgb(128, 128, 128)",
         weight: 1}}
       };
 
-function addlayer2 (){
-  $(document).ready(function() {
-  $.ajax(datalink).done(function(data) {
-   var parsedData = JSON.parse(data);
-      featureGroup = L.geoJson(parsedData, {
-        style: myStyle2
-    }).addTo(map);
-  })
-});}
+      var layer3 = function() {
+        $.ajax(datalink).done(function(data) {
+         var parsedData = JSON.parse(data);
+            featureGroup = L.geoJson(parsedData, {
+              style: myStyle3
+          }).addTo(map);
+        })};
+
+
+//var overlays = {
+// "1-Lots of Waste": layer1,
+// "2-Destination": layer2,
+// "3-Economic Value": layer3
+//};
+
+
+//this just add the layers control to the map
+//L.control.layers(baseLayers,overlays).addTo(map);
+
+//make the layer active.
+
 
 
 // Create event listener for the Add Coffee Shops Button
