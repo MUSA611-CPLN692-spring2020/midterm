@@ -37,6 +37,58 @@
         alt = "waste mismanagement"> </img>
         <p id="description">this is the description</p>
           <!--<div class = "scrollbar" id = "scroll"></div>-->
+        <div id="input" class="inputgroup">
+                <label id="sel">Continent </label>
+                  <select id="option" type="text">
+                  <option value="All">All</option>
+                  <option value="1">Africa</option>
+                  <option value="2">Asia</option>
+                  <option value="3">Americas</option>
+                  <option value="4">Europe</option>
+                  <option value="5">Oceania</option>
+                </select>
+              <br><br>
+                  <label id="sel">Development Status </label>
+                  <select id="option" type="text">
+                    <option value="All">All</option>
+                    <option value="1">Developed</option>
+                    <option value="2">Developing</option>
+                  </select>
+               <br><br>
+                  <label id="sel">Year </label>
+                  <select id="option" type="text">
+                    <option value="All">All</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                  </select>
+              <br><br>
+                <label id="sel">GDP in billion  </label><input type="number" id="GDPb">
+              <br><br>
+                <label id="sel">Population  </label><input type="number" id="Population">
+              <br><br><br>
+              <button id="fire">   Map   </button>
+              </div>
+           </div>
         </div>
       </div>
     <div id="worldmap">Insert Map Here
@@ -44,23 +96,21 @@
     </div>
     <div class = "deck">
         <div id="slide1" class= "button slide">
-          <div class="slide-text">1<br>We Generate a Lot of Waste (View)</div>
-        </div>
+          <div class="slide-text">1<br>We Generate a Lot of Waste</div>
 
+        </div>
         <div id="slide2" class= "button slide">
-          <div class="slide-text">2<br>Destinations of Plastic Waste (View)</div>
-        </div>
+          <div class="slide-text">2<br>Destinations of Plastic Waste</div>
 
+        </div>
         <div id="slide3" class= "button slide">
-          <div class="slide-text">3<br>Economic Value (View)</div>
+          <div class="slide-text">3<br>Economic Value</div>
         </div>
-
         <div id="slide4" class= "button slide">
-          <div class="slide-text">4<br>Destinies of Plastic Waste (View)</div>
+          <div class="slide-text">4<br>Destinies of Plastic Waste</div>
         </div>
-
         <div id="slide5" class= "button slide">
-          <div class="slide-text">5<br>Coming Up! Please Explore Section (View)</div>
+          <div class="slide-text">5<br>Please Explore</div>
         </div>
     </div>
     <script
@@ -72,6 +122,7 @@
     $(document).ready(function() {
       $('#slide1').show()
       loadSlide(slides[0])
+      document.getElementById("input").style.display="none";
       document.getElementById("image1").style.display="inherit";
       document.getElementById("image2").style.display="none";
       document.getElementById("image4").style.display="none";
@@ -79,10 +130,10 @@
 
       var slides = [
       { description: "The world population has been generating a lot of waste.. Annually, we produce 2.01 billion  metric tons of municipal solid waste (MSW) while 84.93 trillion USD  exchange between hands. Our economic prosperity may continue to grow, yet waste production shows no sign of stopping. We are likely going to produce 70%  more by 2050. U.S.A. and China, two of the fastest growing economy, are leading the race of waste generation. Although study showed that waste generate grows as income improved, the fact that the top10 list includes both developing and developed, low and high-income countries suggest the complexity behind this issue.  To disentangle the mystery, let’s first explore plastic waste and its economic implications. "},
-      { description: "Globally, around 9.04 trillion  worth of plastic waste is being traded in the latest report year 2017. The exporters are disproportionally developed and/or higher income countries. Notably, U.S.A. is the single biggest exporter, while EU-28 the single biggest region group exporter. But which countries are holding onto the waste? China has been dealing with around half of the world’s unwanted plastics. Hong Kong remained second biggest importer for many years due to its role in reexporting for profit. Things have changed since the China import ban, the plastic-regulation-added Basel Convention, and more defense from poor, importer countries for their environmental degradation and unfair labor condition in waste industry. As a consequence, 111 billion tons of plastic waste could be displaced by 2030, study showed. Traditional importer countries like Malaysia, India, Philippine, has started to reject waste shipment from exporters. All countries need to be prepared for a new plastic waste future. The map shows the top countries involved in the trade in 2017. While the orange and blue correspond to the color of the chart columns, the countries/region highlighted in black carry out both heavy import and export, most likely gaining profits from reexporting plastic waste."},
-      { description: "Plastic waste trade may sound untraditional, but believe it or not, it has economic values for both sides. Taking US as an example, it costs significantly cheaper to ship recyclables oversea than to treat it domestically, for the lack of domestic recycling power and just the huge convenience of auditing this method as part of the recycling achieved in waste management overall. As for importers like China, due to a long-existing supply chain position, China has been the biggest plastic product producers of the world as well. When the crude oil price remains competitive, recycling plastic becomes even more lucrative as plastic comes from crude oil originally. However, the business in recent years has caused some concern. While the crude oil price has dropped dramatically, and Chinese government has been reconsidering its role in global economy and aspiring to be a leader of sustainability. Plus, the quality and price of imported plastic waste have not been consistent, which has been lack of attention due to a weak link in politics and regulations. Then, how should China, and soon many other countries that rely on foreign lands to process their waste, rethink about such economic value and evaluate its impact in time and scale?"},
+      { description: "Globally, around 9.04 trillion  worth of plastic waste is being traded in the latest report year 2017. The exporters are disproportionally developed and/or higher income countries. Notably, U.S.A. is the single biggest exporter, while EU-28 the single biggest region group exporter. But which countries are holding onto the waste? China has been dealing with around half of the world’s unwanted plastics. Hong Kong remained second biggest importer for many years due to its role in reexporting for profit. Things have changed since the China import ban, the plastic-regulation-added Basel Convention, and more defense from poor, importer countries for their environmental degradation and unfair labor condition in waste industry. As a consequence, 111 billion tons of plastic waste could be displaced by 2030, study showed. Traditional importer countries like Malaysia, India, Philippine, has started to reject waste shipment from exporters. All countries need to be prepared for a new plastic waste future."},
+      { description: "Plastic waste trade may sound untraditional, but believe it or not, it has economic values for both sides. Taking US as an example, it costs significantly cheaper to ship recyclables oversea than to treat it domestically, for the lack of domestic recycling power and just the huge convenience of auditing this method as part of the recycling achieved in waste management overall. As for importers like China, due to a long-existing supply chain position, China has been the biggest plastic product producers of the world as well. When the crude oil price remains competitive, recycling plastic becomes even more lucrative as plastic comes from crude oil originally. However, the business in recent years has caused some concern. While the crude oil price has dropped dramatically, and Chinese government has been reconsidering its role in global economy and aspiring to be a leader of sustainability. Plus, the quality and price of imported plastic waste have not been consistent, which has been lack of attention due to a weak link in politics and regulations. Then, how should China, and soon many other countries that rely on foreign lands to process their waste, rethink about such economic value and evaluate its impact at time-terms and scale?"},
       { description: "One way to evaluate is to reflect on a country’s own waste management performance. As always, this leads us to the final destinies of our plastic waste. A study on US’s 2018 plastic export behavior found out that partner countries could have been mismanaging their own municipal waste up to 78%. Such mismanagement could include landfilling, polluting the waterway, the ocean, and eventually ground water supply, as well as illegal trafficking at ports. It’s easy to celebrate for achievement, but it will take years, serious measures, and even lives to recover from a deficit due to mismanagement. But let’s not just leaving the conversation to those in the chambers or city halls to carry out. Everyone of us may have been contributing plastic waste everyday, passively or actively. So how you can be part of the conversation? Move on to the last section to explore the global context at your own leisure. "},
-      { description: "Now it's your time to explore! Don't forget to share with the others your observations~ Will allow interactive data fetching in the future."}
+      { description: "Now it's your time to explore! Don't forget to share with the others your observations~"}
     ]
       var currentSlide = 0
 
@@ -96,10 +147,11 @@ var slide1 = function(){
   if (currentSlide == 0 ){
     $('#slide1').show()
     loadSlide(slides[0])
+    document.getElementById("input").style.display="none";
     document.getElementById("image1").style.display="inherit";
     document.getElementById("image2").style.display="none";
     document.getElementById("image4").style.display="none";
-    document.getElementById("slide1").addEventListener("click", addlayer1);
+    document.getElementById("image1").addEventListener("click", addlayer1);
     }
 }
 
@@ -113,10 +165,11 @@ var slide2 = function(){
 }else{
     $('#slide2').show()
     loadSlide(slides[1])
+    document.getElementById("input").style.display="none";
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="inherit";
     document.getElementById("image4").style.display="none";
-    document.getElementById("slide2").addEventListener("click", addlayer2);
+    document.getElementById("image2").addEventListener("click", addlayer2);
 }
 }
 $('#slide2').click(function(e){
@@ -130,10 +183,10 @@ var slide3 = function(){
   }else{
       $('#slide3').show()
       loadSlide(slides[2])
+      document.getElementById("input").style.display="none";
       document.getElementById("image1").style.display="none";
       document.getElementById("image2").style.display="none";
       document.getElementById("image4").style.display="none";
-      document.getElementById("slide2").addEventListener("click", addlayer3);
   }
   }
   $('#slide3').click(function(e){
@@ -144,10 +197,10 @@ var slide4 = function(){
 }else{
     $('#slide4').show()
     loadSlide(slides[3])
+    document.getElementById("input").style.display="none";
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="none";
     document.getElementById("image4").style.display="inherit";
-    document.getElementById("slide2").addEventListener("click", addlayer4);
 }
 }
 $('#slide4').click(function(e){
@@ -158,6 +211,7 @@ var slide5 = function(){
 }else{
     $('#slide5').show()
     loadSlide(slides[4])
+    document.getElementById("input").style.display="inherit";
     document.getElementById("image1").style.display="none";
     document.getElementById("image2").style.display="none";
     document.getElementById("image4").style.display="none";

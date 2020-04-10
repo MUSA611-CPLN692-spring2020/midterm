@@ -154,6 +154,13 @@ label {
   width:18%;
 }
 
+#sel {
+  padding: 30px;
+  margin: 20px;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
 #image1{
   position: absolute;
   height:40%;
@@ -200,6 +207,14 @@ label {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#input{
+  position: absolute;
+  bottom: 50%;
+  top: 25%;
+  font-family: sans-serif;
+  font-size: 24px;
+  color:darkslategray;
+}
 
 #description{
   position: absolute;
@@ -216,6 +231,14 @@ label {
       overflow: scroll;
 }
 
+#fire {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    font-size: 18px;
+    border-radius: 10%;
+    padding: 10px;
+}
 #worldmap {
   background-color: lightblue;
   position: absolute;
@@ -226,3 +249,10 @@ label {
   min-width:500px;
   z-index:99;
 }
+
+.text-labels {
+           font-size: 2em;
+           font-weight: 700;
+           color: white;
+           /* Use color, background, set margins for offset, etc */
+       }
