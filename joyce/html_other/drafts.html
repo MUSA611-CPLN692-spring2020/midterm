@@ -1,0 +1,138 @@
+<div class="inputgroup">
+        <label for="sel">Continent </label>
+          <select id="option" type="text">
+          <option value="All">All</option>
+          <option value="1">Africa</option>
+          <option value="2">Asia</option>
+          <option value="3">Americas</option>
+          <option value="4">Europe</option>
+          <option value="5">Oceania</option>
+        </select>
+      </div>
+      <br>
+      <div class="inputgroup">
+          <label for="sel">Development Status </label>
+          <select id="sel" type="text">
+            <option value="All">All</option>
+            <option value="1">Developed</option>
+            <option value="2">Developing</option>
+          </select>
+      </div>
+      <div class="inputgroup">
+          <label for="sel">Year </label>
+          <select id="sel" type="text">
+            <option value="All">All</option>
+            <option value="1996">1996</option>
+            <option value="1997">1997</option>
+            <option value="1998">1998</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+          </select>
+      </div>
+      <br>
+      <div class="inputgroup">
+        <label id="sel">GDP in billion  </label><input type="number" id="GDPb">
+      </div>
+      <div class="inputgroup">
+        <label id="sel">Population  </label><input type="number" id="Population">
+      </div>
+      <br>
+      <button id="fire"> See Waste Export by Country </button>
+      </div>
+</div>
+
+
+
+var next = function() {
+  if (currentSlide == slides.length - 1) {
+} else {
+    $('#nextButton').show()
+    currentSlide = currentSlide + 1
+    loadSlide(slides[currentSlide])
+}
+  if (currentSlide == slides.length - 1) {
+    $('#nextButton').hide()
+}
+}
+$('#nextButton').click(function(e) {
+next()
+});
+
+
+<img id="image1" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide1.png"
+alt = "top 20 countries in municipal waste generation"> </img>
+<img id="image2" src="https://raw.githubusercontent.com/joyceyuqiliu/midterm/master/joyce/image/slide2.png"
+alt = "top 10 countries in plastic waste export and import"> </img>
+
+
+var images = ["slide1.png","slide2.png"]
+var arrayImagesElement = document.getElementById("arrayImages")
+function createImageNode(fileName, altText) {
+   const img = new Image();
+   img.src = fileName;
+   img.alt = altText;
+   return img;
+   images.forEach(ima =>{
+     arrayImagesElement.appendChild(createImageNode(img))
+   })
+
+
+   var input = function(){
+     if (currentSlide = 4){
+       $('#input').show(slide.input)
+     }
+   }
+
+   <script src="http://d3js.org/topojson.v1.min.js"></script>
+   <script src="https://unpkg.com/topojson-client@3"></script>
+
+
+   {
+     style: function(feature){
+       var fillColor,
+           Development=feature.properties.Development;
+           if(Development=1){fillColor="#006837"}
+           else fillColor= "#78c679"
+           return { color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
+               },
+               onEachFeature: function( feature, layer ){
+                 layer.bindPopup( "<strong>" + feature.properties.Name + "</strong><br/>" + feature.properties.density + " rats per square mile" )
+               }
+             }
+
+
+             var map1 = L.map('worldmap',
+                     {maxZoom:12,minZoom:3},
+                     topoLayer = new L.TopoJSON(,
+                     colorScale = chroma
+                     .scale(['#fee8c8', '#e34a33'])
+                     .domain([0,1]));
+             function handleLayer(layer)
+                     { var randomValue = Math.random(),
+                      fillColor = colorScale(randomValue).hex();
+                      layer.setStyle
+                     	({
+                     		fillColor : fillColor,
+                     		fillOpacity: 0.65,
+                     		color:'#990000',
+                     		weight:0.25,
+                     		opacity:0.9
+                     	});
+                     }
